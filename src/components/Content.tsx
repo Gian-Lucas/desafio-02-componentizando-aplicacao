@@ -3,26 +3,24 @@ import { MovieCard } from "./MovieCard";
 import "../styles/content.scss";
 import { Header } from "./Header";
 
-interface GenreResponseProps {
-  id: number;
-  name: "action" | "comedy" | "documentary" | "drama" | "horror" | "family";
-  title: string;
-}
-
-interface MovieProps {
-  imdbID: string;
-  Title: string;
-  Poster: string;
-  Ratings: Array<{
-    Source: string;
-    Value: string;
-  }>;
-  Runtime: string;
-}
-
 interface ContentProps {
-  selectedGenre: GenreResponseProps;
-  movies: Array<MovieProps>;
+  selectedGenre: {
+    id: number;
+    name: "action" | "comedy" | "documentary" | "drama" | "horror" | "family";
+    title: string;
+  };
+  movies: [
+    {
+      imdbID: string;
+      Title: string;
+      Poster: string;
+      Ratings: Array<{
+        Source: string;
+        Value: string;
+      }>;
+      Runtime: string;
+    }
+  ];
 }
 
 export function Content(props: ContentProps) {

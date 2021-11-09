@@ -1,11 +1,9 @@
-interface GenreResponseProps {
-  id: number;
-  name: "action" | "comedy" | "documentary" | "drama" | "horror" | "family";
-  title: string;
-}
-
 interface HeaderProps {
-  selectedGenre: GenreResponseProps;
+  selectedGenre: {
+    id: number;
+    name: "action" | "comedy" | "documentary" | "drama" | "horror" | "family";
+    title: string;
+  };
 }
 
 export function Header(props: HeaderProps) {

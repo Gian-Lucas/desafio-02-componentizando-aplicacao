@@ -2,14 +2,12 @@ import { Button } from "./Button";
 
 import "../styles/sidebar.scss";
 
-interface GenreResponseProps {
-  id: number;
-  name: "action" | "comedy" | "documentary" | "drama" | "horror" | "family";
-  title: string;
-}
-
 interface SideBarProps {
-  genres: Array<GenreResponseProps>;
+  genres: Array<{
+    id: number;
+    name: "action" | "comedy" | "documentary" | "drama" | "horror" | "family";
+    title: string;
+  }>;
   handleClickButton: (id: number) => void;
   selectedGenreId: number;
 }
