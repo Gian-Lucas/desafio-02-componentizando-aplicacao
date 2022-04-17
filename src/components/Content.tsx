@@ -2,6 +2,7 @@ import { MovieCard } from "./MovieCard";
 
 import "../styles/content.scss";
 import { Header } from "./Header";
+import { memo } from "react";
 
 interface ContentProps {
   movies: Array<{
@@ -22,7 +23,7 @@ interface ContentProps {
   };
 }
 
-export function Content(props: ContentProps) {
+function ContentComponent(props: ContentProps) {
   // Complete aqui
 
   return (
@@ -45,3 +46,7 @@ export function Content(props: ContentProps) {
     </div>
   );
 }
+
+export const Content = memo(ContentComponent, (prevProps, nextProps) => {
+  return Object.is(prevProps.selectedGenre, nextProps.selectedGenre);
+});

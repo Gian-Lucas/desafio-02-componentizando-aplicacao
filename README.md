@@ -10,3 +10,6 @@ A aplicação já está totalmente funcional mas grande parte do seu código est
 - Na sidebar é possível selecionar qual categoria de filmes deve ser listada;
 - A primeira categoria da lista (que é "Ação") já deve começar como marcada;
 - O header da aplicação possui apenas o nome da categoria selecionada que deve mudar dinamicamente.
+
+# Outro desafio
+Você deverá performar uma aplicação React utilizando das ferramentas e dicas aprendidas durante o módulo Performando apps com ReactJS.

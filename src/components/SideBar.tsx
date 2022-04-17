@@ -2,7 +2,7 @@ import { Button } from "./Button";
 
 import "../styles/sidebar.scss";
 
-interface SideBarProps {
+export interface SideBarProps {
   genres: Array<{
     id: number;
     name: "action" | "comedy" | "documentary" | "drama" | "horror" | "family";
@@ -12,7 +12,11 @@ interface SideBarProps {
   selectedGenreId: number;
 }
 
-export function SideBar(props: SideBarProps) {
+export function SideBar({
+  genres,
+  handleClickButton,
+  selectedGenreId,
+}: SideBarProps) {
   // Complete aqui
 
   return (
@@ -22,13 +26,13 @@ export function SideBar(props: SideBarProps) {
       </span>
 
       <div className="buttons-container">
-        {props.genres.map((genre) => (
+        {genres.map((genre) => (
           <Button
             key={String(genre.id)}
             title={genre.title}
             iconName={genre.name}
-            onClick={() => props.handleClickButton(genre.id)}
-            selected={props.selectedGenreId === genre.id}
+            onClick={() => handleClickButton(genre.id)}
+            selected={selectedGenreId === genre.id}
           />
         ))}
       </div>
